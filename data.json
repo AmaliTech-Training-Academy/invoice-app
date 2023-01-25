@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "address": "Tanokrom",
+      "city": "takoradi",
+      "post": "895",
+      "country": "ghana",
+      "clientName": "bliss",
+      "clientEmail": "bliss@fmail.com",
+      "address2": "presbylane1",
+      "city2": "tarkwa",
+      "post2": "8789",
+      "country2": "ghana",
+      "invoiceDate": "2023-01-11",
+      "project": "i want money",
+      "id": 1
+    }
+  ]
+}
