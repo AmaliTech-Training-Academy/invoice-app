@@ -1,13 +1,9 @@
-import NoContentImg from "../../../assets/noContent.svg" 
-import InvoiceNav from "../InvoiceNav/InvoiceNav"
-import Nav from "../Nav/Nav"
+import NoContentImg from "../../../../public/assets/illustration-empty.svg" 
 
 const NoContent = () => {
     return (
-        <div className="mt-20 p-8 h-full">
-            <InvoiceNav />
+        <div className="mt-[30%]">
             <div className="flex flex-col justify-center items-center h-full space-y-3">
-            
                 <img src={NoContentImg} width="200" />
                 <h1 className="text-3xl">There is nothing here</h1>
                 <p className="opacity-60">
@@ -16,10 +12,8 @@ const NoContent = () => {
                         New Invoice
                     </span> button and get started
                 </p>
-
             </div>
         </div>
-
     )
 }
 

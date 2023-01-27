@@ -3,9 +3,13 @@ main {
     height: 100vh;
     background: rgba(0, 0, 0, 0.561);
   }
-  
+
   .container {
-    width: 50% !important;
+  /* .unshow{
+    display: none;
+  } */
+  .section {
+    width: 50% ;
     height: 100%;
     border-radius: 0px 20px 20px 0px;
     display: flex;
@@ -13,10 +17,10 @@ main {
     align-items: flex-end;
     padding-top: 56px;
   }
-  .dark-container {
+  .dark-section {
     background: var(--color-dark);
   }
-  .light-container {
+  .light-section {
     background: var(--color-white);
   }
   .form-content {
@@ -42,7 +46,7 @@ main {
     color: #0c0e16;
   }
   
-  .form-container {
+  .form-section {
     height: 85%;
     overflow-y: scroll;
   }
@@ -74,11 +78,11 @@ main {
     color: var(--color-purple-gray);
   }
   
-  .bill-form-container {
+  .bill-form-section {
     margin-top: 48px;
     width: 504px;
   }
-  .form-title-container {
+  .form-title-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,19 +114,19 @@ main {
   .light-form-title {
     color: var(--color-light-purple-gray);
   }
-  input {
-    width: 100% !important;
-    margin-left: 1px !important;
-    height: 48px !important;
-    margin-top: 10px !important;
-    border: 1px solid var(--color-light) !important;
-    border-radius: 4px !important;
-    font-weight: 700 !important;
-    font-size: 12px !important;
-    line-height: 15px !important;
-    letter-spacing: -0.25px !important;
-    text-transform: uppercase !important;
-    padding: 15px !important;
+  .in {
+    width: 100% ;
+    margin-left: 1px ;
+    height: 48px ;
+    margin-top: 10px ;
+    border: 1px solid var(--color-light) ;
+    border-radius: 4px ;
+    font-weight: 700 ;
+    font-size: 12px ;
+    line-height: 15px ;
+    letter-spacing: -0.25px ;
+    text-transform: capitalize ;
+    padding: 15px ;
   }
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -139,12 +143,12 @@ main {
     background: #ffffff;
     color: #0c0e16;
   }
-  input:invalid {
-    border-color: #ec5757;
+  .invalid {
+    border-color: #ec5757 ;
   }
   input:focus {
     outline: none;
-    border: 1px solid var(--color-light-purple);
+    border: 1px  var(--color-light-purple) ;
   }
   
   .address {
@@ -154,8 +158,8 @@ main {
   }
   
   
-  .address input {
-    width: 100% !important;
+  .address .in {
+    width: 100% ;
   }
   .post{
     margin-left: 15px;
@@ -164,8 +168,9 @@ main {
     margin-top: 48px;
     width: 504px;
   }
-  .invoice-in{
-    width: 180% !important;
+
+  .invoice-input{
+    width: 180% ;
   }
   .invoice-row {
     display: flex;
@@ -366,7 +371,7 @@ main {
     width: 85%;
     padding-inline: 56px;
   }
-  .edit-button-container {
+  .edit-button-section {
     width: 242px;
     height: 48px;
     display: flex;
@@ -444,8 +449,11 @@ main {
   
   
   @media only screen and (max-width: 1440px) {
+
     .container {
-      width: 50% !important;
+
+    .section {
+      width: 50% ;
     }
     .form-content {
       width: 88%;
@@ -453,8 +461,9 @@ main {
   }
   
   @media only screen and (max-width: 1282px) {
-    .container {
-      width: 58% !important;
+    .section {
+
+      width: 58% ;
     }
     .form-content {
       width: 88%;
@@ -474,8 +483,9 @@ main {
   }
   
   @media only screen and (max-width: 1110px) {
-    .container {
-      width: 70% !important; 
+    .section {
+
+      width: 70% ; 
     }
     .form-content {
       width: 100%;
@@ -483,15 +493,16 @@ main {
   }
   
   @media only screen and (max-width: 1025px) {
-    .container {
-      width: 70% !important;
+
+    .section {
+      width: 70% ;
     }
     .form-content {
       width: 90%;
     }
-    
-    input {
-      width: 100% !important;
+    .in {
+
+      width: 100% ;
     }
     .address {
       width: 100%;
@@ -528,19 +539,20 @@ main {
    .item-btn{
     width: 99%;
    }
-   .invoice-in{
-    width: 150% !important;
+   .invoice-input{
+
+    width: 150% ;
    }
   }
   
   
   @media only screen and (max-width: 915px) {
-     .container{ width: 65% !important;
+     .section{ width: 65% ;
   }
   .form-content {
     width: 106%;
   }
-  input {
+  .in {
     width: 92%;
   }
   .address {
@@ -569,8 +581,9 @@ main {
   /* Tablet screens */
   
   @media only screen and (max-width: 850px) {
-    .container {
-      width: 83% !important;
+
+    .section {
+      width: 83% ;
     }
     .form-content {
       width: 100%;
@@ -604,13 +617,13 @@ main {
   }
   
   @media only screen and (max-width: 768px) {
-    .container {
-      width: 80% !important;
+    .section {
+      width: 80% ;
     }
     .form-content {
       width: 105%;
     }
-    input{
+    .in{
       width: 100%;
     }
     .invoice-row{
@@ -639,15 +652,15 @@ main {
   /* Moble screens */
   
   @media only screen and (max-width: 542px) {
-    .container {
-      width: 100% !important;
+    .section {
+      width: 100% ;
       border-radius: 0px 0px 0px 0px;
     }
     .back-button{
         display: flex;
     }
-    input {
-      width: 100% !important;
+    .in {
+      width: 100% ;
     }
   .post{
       margin-left: 1px;
@@ -657,10 +670,10 @@ main {
     .form-content {
       width: 105%;
     }
-    .form-container {
+    .form-section {
       width: 115%;
     }
-    .bill-form-container {
+    .bill-form-section {
       width: 99.5%;
     }
   .country-message{
@@ -681,19 +694,19 @@ main {
       }
   
     .address .country-in {
-      width: 101% !important;
+      width: 101% ;
     }
     .invoice {
-      width: 100% !important;
+      width: 100% ;
     }
     .invoice-row {
       flex-direction: column;
     }
-    .invoice-row .invoice-in {
-      width: 82vw !important;
+    .invoice-row .invoice-input {
+      width: 82vw ;
     }
     .select {
-      width: 82vw !important;
+      width: 82vw ;
   
     }
     .headings {
@@ -713,29 +726,30 @@ main {
           gap: 16px;
         }
         .input-title .it-name {
-          width: 100% !important;
+          width: 100% ;
         }
         .it-quantity {
-          width: 100% !important;
+          width: 100% ;
         }
         .it-price {
-          width: 100% !important;
+          width: 100% ;
         }
         .item-text {
-          width: 100% !important;
+          width: 100% ;
         }
     .project-in{
-        width: 99.5% !important;
+        width: 99.5% ;
     }
   
     .address-row{
-        margin-left: unset !important;
+        margin-left: unset ;
 
     }
   }
   @media only screen and (max-width: 413px) {
-      .container {
-          width: 100% !important;
+
+      .section {
+          width: 100% ;
         }
         .form-content {
           width: 109%;
@@ -746,46 +760,52 @@ main {
         
        
         .address .country-in {
-          width: 88.3vw !important;
+          width: 88.3vw ;
         }
         .address-row{
-            margin-left: -15px !important;
+            margin-left: -15px ;
 
         }
         .address .city-in{
-            width: 105% !important;
+            width: 105% ;
             
         }
         .address .post-in{
-            width: 105% !important;
+            width: 105% ;
 
         }
         .it-name{
-          width: 88.3vw !important;
+          width: 88.3vw ;
         }
         .invoice {
-          width: 100% !important;
+          width: 100% ;
         }
         .invoice-row {
           flex-direction: column;
         }
-        .invoice-row .invoice-in {
-          width: 88.3vw !important;
+
+        .invoice-row .invoice-input {
+
+          width: 88.3vw ;
         }
         .select {
-          width: 88.3vw !important;
+          width: 88.3vw ;
         }
   
   }
   @media only screen and (max-width: 400px) {
-      .container {
-          width: 100% !important;
+
+      .section {
+
+          width: 100% ;
         }
         .form-content {
           width: 109%;
         }
-        input{
-            width: 100% !important;
+
+        .in{
+
+            width: 100% ;
         }
         .back-button{
             display: flex;
@@ -793,7 +813,7 @@ main {
     .address .country-in {
       width: 89vw;
     }
-    .invoice-row .invoice-in{
+    .invoice-row .invoice-input{
       width: 89vw;
     }
     .select{
@@ -813,18 +833,18 @@ main {
       gap: 16px;
     }
     .address-row{
-        margin-left: unset !important;
+        margin-left: unset ;
 
     }
   }
   
   @media only screen and (max-width: 376px) {
-      .container {
-          width: 100% !important;
+      .section {
+          width: 100% ;
           border-radius: 0px 0px 0px 0px;
         }
-        input {
-          width: 100% !important;
+        .in {
+          width: 100% ;
         }
         .back-button{
             display: flex;
@@ -832,14 +852,14 @@ main {
         .form-content {
           width: 111%;
         }
-        .form-container {
+        .form-section {
           width: 115%;
         }
-        .bill-form-container {
+        .bill-form-section {
           width: 99.5%;
         }
         .address .country-in{
-            width: 102% !important;
+            width: 102% ;
         }
   
         .address {
@@ -848,10 +868,10 @@ main {
           justify-content: flex-start;
         }
         .address .city-in {
-          width: 40vw !important;
+          width: 40vw ;
         }
         .address .post-in {
-          width: 40vw !important;
+          width: 40vw ;
       }
       .address-row{
         width: 100%;
@@ -864,7 +884,7 @@ main {
         }
   
         .address .country-in {
-          width: 101% !important;
+          width: 101% ;
   
         }
   
@@ -874,8 +894,8 @@ main {
         .invoice-row {
           flex-direction: column;
         }
-        .invoice-row .invoice-in {
-          width: 90.5vw !important;
+        .invoice-row .invoice-input {
+          width: 90.5vw ;
         }
         .select {
           width: 90.5vw;
@@ -898,50 +918,57 @@ main {
           gap: 16px;
         }
         .input-title .it-name {
-          width: 100% !important;
+          width: 100% ;
         }
         .it-quantity {
-          width: 100% !important;
+          width: 100% ;
         }
         .it-price {
-          width: 100% !important;
+          width: 100% ;
         }
         .item-text {
-          width: 100% !important;
+          width: 100% ;
         }
   
         .project-in{
-            width: 99.5% !important;
+            width: 99.5% ;
         }
         .address-row{
-            margin-left: unset !important;
+            margin-left: unset ;
     
         }
   
   
   }
   @media only screen and (max-width: 363px) {
-      .container {
-          width: 100% !important;
+      .section {
+          width: 86%!important ;
           border-radius: 0px 0px 0px 0px;
         }
         .form-content {
-          width: 100%;
+          width: 100% ;
           padding-inline: 10px;
+        }
+        .form-section{
+          width: 120%;
+          height: 50%;
+        }
+        .in{
+          width: 87%;
         }
         
         .address .city-in{
-            width: 100% !important;
+            width: 100% ;
         }
         .address .post-in{
-            width: 100% !important;
+            width: 100% ;
 
         }
       .address .country-in{
-          width: 114% !important ;
+          width: 114%  ;
   
       }
-      .invoice-row .invoice-in{
+      .invoice-row .invoice-input{
           width: 106vw;
       }
       .select{
@@ -972,13 +999,13 @@ main {
       gap: 16px;
     }
     .address-row{
-        margin-left: unset !important;
+        margin-left: unset ;
 
     }
   }
   @media only screen and (max-width: 325px) {
-    .container {
-      width: 100% !important;
+    .section {
+      width: 100% ;
       border-radius: 0px 0px 0px 0px;
     }
   
@@ -989,10 +1016,10 @@ main {
     .back-button{
         display: flex;
     }
-    .form-container {
+    .form-section {
       width: 100%;
     }
-    .bill-form-container {
+    .bill-form-section {
       width: 99%;
     }
   
@@ -1041,18 +1068,18 @@ main {
       width: 130%;
     }
   
-    .edit-button-container {
+    .edit-button-section {
       width: 100vw;
     }
     .address-row{
-        margin-left: unset !important;
+        margin-left: unset ;
 
     }
   }
   
   @media only screen and (max-width: 325px) {
-      .container{
-          width: 100% !important;
+      .section{
+          width: 100% ;
       }
       .form-content{
           width: 100%;
@@ -1063,8 +1090,9 @@ main {
       .select{
           width: 90vw;
       }
-      input{
-        width: 100% !important;
+
+      .in{
+        width: 100% ;
       }
       .item-inputs {
         width: 100%;
@@ -1079,16 +1107,16 @@ main {
       gap: 16px;
     }
       .address .country-in{
-        width: 75% !important;
+        width: 75% ;
       }
-     .invoice-row .invoice-in{
+     .invoice-row .invoice-input{
           width: 90vw;
       }
       .item-inputs .it-name{
           width: 90vw;
       }
       .address-row{
-        margin-left: unset !important;
+        margin-left: unset ;
     }
     
 

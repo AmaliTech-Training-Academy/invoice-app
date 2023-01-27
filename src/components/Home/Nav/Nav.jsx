@@ -1,8 +1,7 @@
-import logo from "../../../assets/logo.svg"
-import profile from "../../../assets/profile.svg"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons'
-import { faSun } from '@fortawesome/free-solid-svg-icons'
+import logo from "/assets/logo.svg"
+import profile from "/assets/image-avatar.jpg"
+import moon from "/assets/icon-moon.svg"
+import iconSun from "/assets/icon-sun.svg"
 
 const Nav = ({darkMode,toggleDarkMode}) => {
 
@@ -13,23 +12,22 @@ const Nav = ({darkMode,toggleDarkMode}) => {
             <div className="flex lg:flex-col lg:items-center w-4/5 md:w-10/12 lg:h-full pr-7 lg:p-0 lg:w-full
                 justify-between items-center border-tint-violet border-r-2 lg:border-b-2 lg:border-r-0">
                 
-                <img className="lg:h-24" src={logo} alt="logo"/>
+                <div className="rounded-br-2xl rounded-tr-2xl lg:h-24 flex flex-col items-center 
+                    justify-center bg-dark-violet md:w-24 w-24 h-20 lg:w-full relative">
+                    <img className="z-10" src={logo} alt="logo"/>
+                    <div className="z-auto rounded-br-3xl rounded-tl-2xl 
+                        bottom-0 absolute h-1/2 w-full bg-light-violet"></div>
+                </div>
                 <button className="outline-0" onClick={toggleDarkMode}>
-                    {darkMode ? (
-                                <FontAwesomeIcon 
-                                    icon={faMoon} 
-                                    className="hover:text-icon-hover text-2xl text-light-violet lg:mb-10"/>
-                                ) 
-                            : (
-                                <FontAwesomeIcon 
-                                icon={faSun} 
-                                className="hover:text-icon-hover text-2xl text-light-violet lg:mb-10"/>
-                            ) 
+                    {
+                        darkMode 
+                        ? <img src={moon} className="hover:text-icon-hover text-2xl text-light-violet lg:mb-10"/> 
+                        : <img src={iconSun} className="hover:text-icon-hover text-2xl text-light-violet lg:mb-10"/>
                     }
                 </button>
             </div>
 
-            <img className="w-8 h-8 lg:h-14 lg:w-auto" src={profile} alt="profile" />
+            <img className="rounded-full w-12 lg:h-14 lg:w-auto" src={profile} alt="profile" />
         </div>
     )
 }

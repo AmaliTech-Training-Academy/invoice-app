@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Edit.css";
-import Cartitem from "../cartItem";
-import ArrowDown from "../../../public/assets/icon-arrow-down.svg";
+import ArrowDown from "../../../public/assets/icon-arrow-down.svg"
 import axios from "axios";
 
 const Edit = ({ darkMode }) => {
+
+
   const [invoiceData, setInvoiceData] = useState({
     address: "",
     city: "",
@@ -12,25 +13,30 @@ const Edit = ({ darkMode }) => {
     country: "",
     clientName: "",
     clientEmail: "",
-    address2: "",
-    city2: "",
-    post2: "",
-    country2: "",
+    clientAddress: "",
+    clientCity: "",
+    clientPost: "",
+    clientCountry: "",
     invoiceDate: "",
     project: "",
   });
+
+
   const [formErrors, setFormErrors] = useState({});
-  const [word, setWord] = useState("Net 30 Days");
-  const [isClicked, setIsClicked] = useState(false);
+  const [word,setWord] = useState('Net 30 Days')
+  const [isClicked,setIsClicked] = useState(false)
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
+ 
 
-  const changeValue = (value) => {
-    setWord(value);
-    setIsClicked(!isClicked);
-  };
+  const handleClick= () =>{
+    setIsClicked(!isClicked)
+  }
+
+  const changeValue = (value) =>{
+    setWord(value)
+    setIsClicked(!isClicked)
+
+  }
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -56,7 +62,7 @@ const Edit = ({ darkMode }) => {
     ) {
       setInvoiceData({
         city: "",
-        address: "",
+        address:"",
         post: "",
         country: "",
         clientName: "",
@@ -68,8 +74,7 @@ const Edit = ({ darkMode }) => {
         invoiceDate: "",
         project: "",
       });
-      axios
-        .post("http://localhost:8000/data", {
+      axios.post("http://localhost:8000/data", {
           address: invoiceData.address,
           city: invoiceData.city,
           post: invoiceData.post,
@@ -142,46 +147,39 @@ const Edit = ({ darkMode }) => {
   return (
     <main>
       <form
-        className={`container ${
-          darkMode ? "dark-container " : "light-container"
+        className={`section ${
+          darkMode ? "dark-section " : "light-section"
         }`}
         onSubmit={handleSubmit}
       >
         <div className="form-content">
           <div className="back-button">
-            <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M6.342.886L2.114 5.114l4.228 4.228"
-                stroke="#9277FF"
-                stroke-width="2"
-                fill="none"
-                fill-rule="evenodd"
-              />
-            </svg>
-            Go back
+          <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M6.342.886L2.114 5.114l4.228 4.228" stroke="#9277FF" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+          Go back
           </div>
           <h4 className={`title ${darkMode ? "dark-title" : "light-title"}`}>
             Edit <span className="titleh">#</span>XM9141
           </h4>
           <form
-            className={`form-container ${
+            className={`form-section ${
               darkMode ? "dark-scroll" : "light-scroll"
             }`}
           >
-            <div className="bill-form-container">
+            <div className="bill-form-section">
               <h4 className="form-title-head">bill from</h4>
-              <div className="form-title-container">
+              <div className="form-title-section">
                 <div className="message">
-                  <p
-                    className={`form-title ${
+
+                <p
+                  className={`form-title ${
                       darkMode ? " dark-form-title" : "light-form-title"
                     }`}
-                  >
-                    street address
-                  </p>
+                    >
+                  street address
+                </p>
 
-                  <p className="error">{formErrors.address}</p>
-                </div>
+                <p className="error">{formErrors.address}</p>
+                    </div>
               </div>
 
               <input
@@ -216,7 +214,7 @@ const Edit = ({ darkMode }) => {
                       value={invoiceData.city}
                       onChange={handleChange}
                     />
-                  </div>
+                </div>
 
                   <div className="post">
                     <div className="form-title-container ">
@@ -239,8 +237,8 @@ const Edit = ({ darkMode }) => {
                       value={invoiceData.post}
                       onChange={handleChange}
                     />
-                  </div>
                 </div>
+                    </div>
                 <div>
                   <div className="form-title-container">
                     <div className="country-message">
@@ -252,9 +250,9 @@ const Edit = ({ darkMode }) => {
                         country
                       </p>
 
-                      <p className="error">{formErrors.country}</p>
+                <p className="error">{formErrors.country}</p>
                     </div>
-                  </div>
+              </div>
                   <input
                     className={`country-in ${
                       darkMode ? "dark-input" : "light-input"
@@ -267,63 +265,66 @@ const Edit = ({ darkMode }) => {
                 </div>
               </div>
             </div>
-            <div className="bill-form-container">
+            <div className="bill-form-section">
               <h4 className="form-title-head">bill from</h4>
-              <div className="form-title-container">
+              <div className="form-title-section">
                 <div className="message">
-                  <p
-                    className={`form-title ${
+
+                <p
+                  className={`form-title ${
                       darkMode ? " dark-form-title" : "light-form-title"
                     }`}
-                  >
-                    client's name
-                  </p>
+                    >
+                  client's name
+                </p>
 
                   <p className="error">{formErrors.clientEmail}</p>
                 </div>
               </div>
               <input
-                className={`${darkMode ? "dark-input" : "light-input"}`}
+                className={` in ${darkMode ? "dark-input" : "light-input"}`}
                 type="text"
                 name="clientName"
                 value={invoiceData.clientName}
                 onChange={handleChange}
               />
-              <div className="form-title-container">
+              <div className="form-title-section">
                 <div className="message">
-                  <p
-                    className={`form-title ${
+
+                <p
+                  className={`form-title ${
                       darkMode ? " dark-form-title" : "light-form-title"
                     }`}
-                  >
-                    client's email
-                  </p>
+                    >
+                  client's email
+                </p>
 
-                  <p className="error">{formErrors.clientEmail}</p>
-                </div>
+                <p className="error">{formErrors.clientEmail}</p>
+                    </div>
               </div>
               <input
-                className={`${darkMode ? "dark-input" : "light-input"}`}
+                className={` in ${darkMode ? "dark-input" : "light-input"}`}
                 type="text"
                 name="clientEmail"
                 value={invoiceData.clientEmail}
                 onChange={handleChange}
               />
-              <div className="form-title-container">
+              <div className="form-title-section">
                 <div className="message">
-                  <p
-                    className={`form-title ${
+
+                <p
+                  className={`form-title ${
                       darkMode ? " dark-form-title" : "light-form-title"
                     }`}
-                  >
-                    street address
-                  </p>
+                    >
+                  street address
+                </p>
 
                   <p className="error">{formErrors.address2}</p>
                 </div>
               </div>
               <input
-                className={`${darkMode ? "dark-input" : "light-input"}`}
+                className={` in ${darkMode ? "dark-input" : "light-input"}`}
                 type="text"
                 name="address2"
                 value={invoiceData.address2}
@@ -417,16 +418,16 @@ const Edit = ({ darkMode }) => {
                       invoice date
                     </p>
 
-                    <p className="error">{formErrors.invoiceDate}</p>
-                  </div>
+                <p className="error">{formErrors.invoiceDate}</p>
+              </div>
                   <input
                     className={`invoice-in ${
                       darkMode ? "dark-input" : "light-input"
                     }`}
                     type="date"
                     name="invoiceDate"
-                    value={invoiceData.invoiceDate}
-                    onChange={handleChange}
+                value={invoiceData.invoiceDate}
+                onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -501,25 +502,26 @@ const Edit = ({ darkMode }) => {
                         darkMode ? " dark-form-title" : "light-form-title"
                       }`}
                     >
-                      project description
-                    </p>
+                  project description
+                </p>
 
-                    <p className="error">{formErrors.project}</p>
-                  </div>
-                </div>
+                <p className="error">{formErrors.project}</p>
+                    </div>
+              </div>
                 <input
                   className={`project-in ${
                     darkMode ? "dark-input" : "light-input"
                   }`}
                   type="text"
                   name="project"
-                  value={invoiceData.project}
-                  onChange={handleChange}
+                value={invoiceData.project}
+                onChange={handleChange}
                 />
               </div>
             </div>
             <h4 className="items-title">Item List</h4>
             <div className="item">
+             
               <div className="item-inputs">
                 <div className="input-title">
                   <h5 className="form-title">item name</h5>
@@ -529,9 +531,11 @@ const Edit = ({ darkMode }) => {
                     }`}
                     type="text"
                   />
-                </div>
-                <div className="rest">
-                  <div className="input-title">
+                  </div>
+                  <div className="rest">
+
+                <div className="input-title">
+
                     <h5 className="form-title">qty.</h5>
 
                     <input
@@ -554,44 +558,44 @@ const Edit = ({ darkMode }) => {
                     />
                   </div>
 
-                  <div className="input-title">
-                    <h5 className=" form-title total">total</h5>
+               
+               <div className="input-title">
+               <h5 className=" form-title total">total</h5>
 
-                    <div className="item-text">
-                      <h4>156.00</h4>
-                    </div>
-                  </div>
+                <div className="item-text">
+                  <h4>156.00</h4>
+                  
+                </div>
+               </div>
 
-                  <svg
+               <svg
                     width="13"
                     height="16"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
+                    >
                     <path
                       d="M11.583 3.556v10.666c0 .982-.795 1.778-1.777 1.778H2.694a1.777 1.777 0 01-1.777-1.778V3.556h10.666zM8.473 0l.888.889h3.111v1.778H.028V.889h3.11L4.029 0h4.444z"
                       fill="#888EB0"
                       fill-rule="nonzero"
-                    />
+                      />
                   </svg>
-                </div>
-              </div>
+                      </div>
 
-              <button
-                className={`item-btn ${
-                  darkMode ? "dark-item-btn" : "light-item-btn"
-                }`}
-              >
+              </div>
+             
+              <button className={`item-btn ${darkMode ?"dark-item-btn": "light-item-btn"}`}>
                 + add new item
               </button>
             </div>
+
           </form>
           <div className="error">
-            <p>-All fields must be added</p>
-            <p>-An item must be added</p>
+            <p>{formErrors.item}</p>
+            <p>{formErrors.quantity}</p>
           </div>
         </div>
         <div className="edit-invoice-button">
-          <div className="edit-button-container">
+          <div className="edit-button-section">
             <button
               className={`cancel-btn ${
                 darkMode ? "dark-cancel-btn" : "light-cancel-btn"
@@ -599,9 +603,7 @@ const Edit = ({ darkMode }) => {
             >
               cancel
             </button>
-            <button type="submit" className="save-btn">
-              save changes
-            </button>
+            <button type="submit" className="save-btn">save changes</button>
           </div>
         </div>
       </form>
