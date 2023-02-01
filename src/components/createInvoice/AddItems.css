@@ -1,0 +1,142 @@
+.items-section {
+  margin-block: 32px;
+}
+
+.items-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.item-name,
+.item-quantity,
+.item-price,
+.item-total-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-name label:not(:first-child),
+.item-quantity label:not(:first-child),
+.item-price label:not(:first-child),
+.item-total-price label:not(:first-child) {
+    display: none;
+}
+
+.item-name {
+  width: 36%;
+}
+
+.item-name input {
+  width: 100%;
+}
+
+.item-quantity {
+  width: 10%;
+}
+
+.item-quantity input {
+  width: 100%;
+}
+
+.item-price {
+  width: 26%;
+}
+
+.item-price input {
+  width: 100%;
+}
+
+.item-total-price {
+  width: 19%;
+}
+
+.total-price-down {
+  display: flex;
+  height: 60%;
+  width: 100%;
+}
+
+.total-price {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-delete-svg {
+  height: 48px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-delete-svg svg:hover path {
+  fill: var(--color-pink);
+  transition: var(--transition);
+}
+
+.add-item-button {
+  border-radius: 24px;
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  height: 48px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  cursor: pointer;
+}
+
+.add-item-button-light {
+  color: var(--color-light-purple-gray);
+  background: #f9fafe;
+}
+
+.add-item-button-light:hover {
+  background: var(--color-light);
+}
+
+.add-item-button-dark {
+  background: var(--color-dark-purple-secondary);
+  color: var(--color-light);
+}
+
+.add-item-button-dark:hover {
+  background: var(--color-dark-purple-primary);
+}
+
+@media screen and (max-width: 480px) {
+
+    .items-content {
+    
+        margin-bottom: 48px;
+      }
+
+  .item-name {
+    width: 100%;
+  }
+
+  .item-quantity {
+        width: 20%;
+    }
+
+  /* .item-price {
+        width: 26%;
+    } */
+
+  /* .item-total-price {
+        width: 19%;
+    } */
+
+  /* .total-price-down {
+        display: flex;
+        height: 60%;
+        width: 100%;
+    } */
+}
