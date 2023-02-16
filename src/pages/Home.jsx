@@ -50,7 +50,7 @@ const Home = ({darkMode, }) => {
                         <Link to={`/viewinvoice/${invoice.id}`}>
                           <Card darkMode={darkMode} invoiceId={invoice.id} 
                             name={invoice.clientName} dueDate={invoice.paymentDue}
-                            amount={invoice.total} status={invoice.status}
+                            amount={invoice.total.toFixed(2)} status={invoice.status}
                           />  
                         </Link>
                       </div>
@@ -62,7 +62,7 @@ const Home = ({darkMode, }) => {
                     <Link to={`/viewinvoice/${invoice.id}`}>
                       <Card darkMode={darkMode} invoiceId={invoice.id} 
                         name={invoice.clientName} dueDate={invoice.paymentDue}
-                        amount={invoice.total} status={invoice.status}
+                        amount={invoice.total.toFixed(2)} status={invoice.status}
                       />  
                     </Link>
                   </div>
